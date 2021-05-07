@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+    front:
+      image: nginx:latest
+      ports:
+      - "80:80"
+      volumes:
+      - D:\Prog\Technlog\exam1\dev\front:/usr/share/nginx/html
+    back:
+      build:  
+        context: dev/back/
+        dockerfile: DockerfileDev
+      ports:
+          - "3000:3000"
+      volumes:
+            - D:\Prog\Technlog\exam1\dev\back:/usr/app
+    mongodb:
+      image: mongo:latest
+      hostname: mongodb
+      ports:
+          - "27017:27017"

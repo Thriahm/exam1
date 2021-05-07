@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+    front:
+      image: troyank9/exam1_front:1.0.0
+      ports:
+      - "80:80"
+    back:
+      image: troyank9/exam1_back:1.0.0
+      ports:
+          - "3000:3000"
+    mongodb:
+      image: mongo:latest
+      hostname: mongodb
+      ports:
+          - "27017:27017"
+        
+        
